@@ -1,19 +1,40 @@
 # Intro
 
 An API Server serving RBAC authorization using OPA where rule data are stored in DB.
+<br><br>
 
-**Tech stacks used:**
-- language: 
+### External Data: [Option 5: Pull Data during Evaluation](https://www.openpolicyagent.org/docs/latest/external-data/#option-5-pull-data-during-evaluation)
+<br>
+
+![img.png](img.png)
+
+<br>
+
+### Tech stacks used
+- language
   - go, rego
-- db: 
+- db:
   - mariadb
-- framework: 
+- framework
   - gin-gonic framework
-  - wire injection
-- orm:
+  - go wire
+- orm
   - gorm
+- rule engine
+  - [OPA](https://www.openpolicyagent.org/docs/latest/integration/#integrating-with-the-go-api)
 
+<br>
 
+### Check List
+[ o ] implement opa logic using opa lib <br>
+[ o ] service web using gin <br>
+[ o ] use DI framework - used go wire <br>
+[ o ] api for evaluating rbac <br>
+[ x ] Select SQL for data json used by opa engine from DB <br>
+[ x ] api for CRUD permission, role, user, project <br>
+[ x ] api for CRUD permission to role, role to user <br>
+
+<br>
 
 # Rego
 ```rego
